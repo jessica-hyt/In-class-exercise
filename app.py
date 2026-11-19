@@ -8,8 +8,8 @@ Due: Thursday 19 November 2026 (lecture day)
 Environment: VS Code / local Python
 
 Student information (fill in):
-Name: ______________________________
-Student ID: ________________________
+Name: _____HO Yan Tung____________
+Student ID: ______21176723____________
 Email: _____________________________
 
 How to use:
@@ -44,27 +44,27 @@ import streamlit as st
 # functions — keep everything at top level.
 
 # Blank A: page title (match the screenshot).
-______  # hint: st.title("...")
+st.title("Retail Business Dasboard")  # hint: st.title("...")
 
 # Blank B: section header (match the screenshot).
-______  # hint: st.header("...")
+st.header("Manager Input Section")  # hint: st.header("...")
 
 # Blank C: short instruction under the header (match the screenshot).
-______  # hint: st.write("...")
+st.write("Please enter the monthly sales target and select the region.")  # hint: st.write("...")
 
 # Blank D: monthly sales target (USD). Default 50000. Minimum 0. (match the screenshot)
 # Do not set a maximum (the Challenge uses a target above 50000).
-sales_target = ______  # hint: st.number_input("...")
+sales_target = st.number_input("Enter Monthly Sales Target(in USD):", value = 50000, min = 0)  # hint: st.number_input("...")
 
 # Blank E: region dropdown (match the options shown in the document).
-region = ______  # hint: st.selectbox("...")
+region = st.selectbox("Select Region:", ["North", "West", "East", "South"])  # hint: st.selectbox("...")
 
 # Blank F: Submit button, then show the entered values and a success message (match the screenshot).
-if ______:  # hint: st.button("...")
-    ______  # hint: st.write("...")  — sales target, include a $
-    ______  # hint: st.write("...")  — region selected
-    ______  # hint: st.success("...")
+if st.button("Submit") :  # hint: st.button("...")
+    st.write(f"Sales Target: ${sales_target}")  # hint: st.write("...")  — sales target, include a $
+    st.write(f"Region Selected: {region}")  # hint: st.write("...")  — region selected
+    st.success("Dashboard updated successfully!")  # hint: st.success("...")
 
     # Challenge: if the sales target is greater than 100000, show an extra message (match the screenshot).
-    if ______:  # hint: compare sales_target with 100000
-        ______  # hint: st.write("...")
+    if sales_target > 100000:  # hint: compare sales_target with 100000
+        st.write("Great! You have set an ambitious target!")  # hint: st.write("...")
